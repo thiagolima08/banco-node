@@ -3,7 +3,7 @@ class ClienteController {
     private inputNome: HTMLInputElement;
     private inputCpf: HTMLInputElement;
     private inputConta: HTMLInputElement;
-
+    private contasCliente: Contas;
     private clientes: Clientes;
 
     constructor() {
@@ -12,14 +12,16 @@ class ClienteController {
         this.inputCpf =
             <HTMLInputElement>document.querySelector("#cpf");
         this.inputConta =
-            <HTMLInputElement>document.querySelector("#conta");
+        <HTMLInputElement>document.querySelector("#conta");
         this.clientes = new Clientes();
+        this.contasCliente = new Contas();
     }
 
-    inserirCliente(evento: Event) {
-        evento.preventDefault();
+    inserirCliente(event: Event) {
+        event.preventDefault();
+        console.log(this.contasCliente.pesquisar(this.inputConta.value))
         let novoCliente = new Cliente(this.inputNome.value,
-            this.inputCpf.value,this.inputConta.value);
+            this.inputCpf.value, this.contasCliente.pesquisar(this.inputConta.value));
 
         this.clientes.inserir(novoCliente);
         this.inserirClienteNoHTML(novoCliente);
