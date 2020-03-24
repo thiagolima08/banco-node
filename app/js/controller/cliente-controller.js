@@ -7,10 +7,12 @@ class ClienteController {
         this.inputConta =
             document.querySelector("#conta");
         this.clientes = new Clientes();
+        this.contasCliente = new Contas();
     }
-    inserirCliente(evento) {
-        evento.preventDefault();
-        let novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value, this.inputConta.value);
+    inserirCliente(event) {
+        event.preventDefault();
+        console.log(this.contasCliente.pesquisar(this.inputConta.value));
+        let novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value, this.contasCliente.pesquisar(this.inputConta.value));
         this.clientes.inserir(novoCliente);
         this.inserirClienteNoHTML(novoCliente);
     }

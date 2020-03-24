@@ -2,9 +2,9 @@ class Cliente {
 
     private _nome: string;
     private _cpf: string;
-    private _conta: String;
+    private _conta: Conta;
 
-    constructor(nome: string, cpf: string, conta: String) {
+    constructor(nome: string, cpf: string, conta: Conta) {
         this._nome = nome;
         this._cpf = cpf;
         this._conta = conta;
@@ -26,7 +26,7 @@ class Cliente {
         this._cpf = cpf;
     }
 
-    get conta(): String {
+    get conta(): Conta {
         return this._conta;
     }
 

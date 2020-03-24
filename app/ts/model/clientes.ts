@@ -4,8 +4,10 @@ class Clientes {
 
     constructor() {
         this.clientes = new Array<Cliente>();
-        const cli_1 = new Cliente('Fulano','10011122233','1');
-        const cli_2 = new Cliente('Cicrano','20011122230','2');
+        const c1 = new Conta('1', 100);
+        const c2 = new Conta('2', 200);
+        const cli_1 = new Cliente('Fulano','10011122233',c1);
+        const cli_2 = new Cliente('Cicrano','20011122230',c2);
         this.clientes.push(cli_1, cli_2);
     }
 
